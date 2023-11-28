@@ -1,6 +1,6 @@
 "use client"
 import Cookies from 'js-cookie';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -35,12 +35,12 @@ export default function Login() {
                 Cookies.set('token', token);
 
                 console.log('Login berhasil! Token:', token);
-                window.location.href = '/home';
+                window.location.href = `/home`;
             })
             .catch(error => {
                 console.error('Error fetching login data:', error);
             });
-        }
+    }
 
     return (
         <div className="flex w-full h-screen">
