@@ -14,7 +14,7 @@ export default function Home() {
     };
 
     const handleHistory = () => {
-        window.location.href = "/login";
+        window.location.href = "/history";
     };
 
     useEffect(() => {
