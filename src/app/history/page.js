@@ -9,6 +9,10 @@ export default function History() {
     const [denda, setDenda] = useState(0);
     const moment = require('moment');
 
+    const handleHome = () => {
+        window.location.href = "/home";
+    }
+
     const tgl = (timestamp) => {
         return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
     }
@@ -38,11 +42,11 @@ export default function History() {
         <div className="flex flex-col">
             <div className="flex justify-between">
                 <div className="px-24 pt-12 space-y-12">
-                    <h1 className="font-semibold text-5xl text-accent">History</h1>
+                    <button className="font-semibold text-5xl text-accent" onClick={handleHome}>Back</button>
                 </div>
             </div>
             <div className="px-28 pt-10 mb-4 space-y-8">
-                <h2 className="font-semibold text-3xl text-gray-600">On Order</h2>
+                <h2 className="font-semibold text-3xl text-gray-600">Order History</h2>
                 {sewaData.map((sewa) => (
                     <div key={sewa.userId} className="h-fit bg-accent rounded-lg space-x-2 px-4 py-2 mx-32 ml-32 ">
                         <div className="flex justify-between">
