@@ -9,12 +9,6 @@ export default function History() {
     const [denda, setDenda] = useState(0);
     const moment = require('moment');
 
-    const handleClick = () => {
-        if (status === 'select') {
-            setStatus('terbayar');
-        }
-    };
-
     const tgl = (timestamp) => {
         return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
     }
@@ -68,13 +62,7 @@ export default function History() {
                                 <p className="font-semibold text-1xl text-gray-400">+ denda : IDR  -</p>
                             </div>
                             <div className="px-8 pb-4 text-right">
-                                <button
-                                    type="button"
-                                    className={`font-semibold text-2xl text-${status === 'select' ? 'yellow-500' : 'gray-400'}`}
-                                    onClick={handleClick}
-                                >
-                                    {status === 'select' ? 'Paid' : 'Paid Off'}
-                                </button>
+                                <p className="font-semibold text-4xl text-yellow-500">Paid</p>
                             </div>
                         </div>
                     </div>
