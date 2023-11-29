@@ -57,6 +57,7 @@ export default function History() {
                             </div>
                             <div className="px-4 pt-4 mr-90">
                                 <p className="font-semibold text-2xl text-gray-400">{tgl(sewa.tanggalSewa)}</p>
+                                <p className="font-semibold text-1xl text-gray-400">Lama Sewa : {sewa.lamaSewa} Hari</p>
                             </div>
                         </div>
                         <div className="px-6 pt-14">
