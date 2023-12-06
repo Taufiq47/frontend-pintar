@@ -63,10 +63,10 @@ export default function History() {
                         </div>
                         <div className="flex justify-between">
                             <div className="pl-8 pt-3 pb-4">
-                                <p className="font-semibold text-1xl text-gray-400">+ denda : IDR  -</p>
+                                <p className="font-semibold text-1xl text-gray-400">+ denda : IDR  {sewa.dendaSewa}</p>
                             </div>
                             <div className="px-8 pb-4 text-right">
-                                <p className="font-semibold text-4xl text-yellow-500">Paid</p>
+                                <p className="font-semibold text-4xl text-yellow-500">{sewa.statusSewa}</p>
                             </div>
                         </div>
                     </div>

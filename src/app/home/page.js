@@ -99,7 +99,7 @@ export default function Home() {
                                         <p
                                             id="hargaSewa"
                                             className="text-sm font-bold text-accent"
-                                        >{`IDR ${car.hargaSewa}/hari`}</p>
+                                        >{`${car.hargaSewa.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}/hari`}</p>
                                     </div>
                                 </div>
                                 <div className="py-2">

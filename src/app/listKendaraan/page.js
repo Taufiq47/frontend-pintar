@@ -1,11 +1,12 @@
 "use client"
 import { Router } from "next/router";
 import React, { useEffect, useState } from "react";
-
+import Cookies from "js-cookie";
 
 export default function adminList() {
     const [dataKendaraan, setKendaraan] = useState([]);
     const moment = require('moment');
+    const token = Cookies.get('token');
 
     const tgl = (timestamp) => {
         return moment(timestamp).format('YYYY-MM-DD HH:mm:ss');
@@ -15,7 +16,7 @@ export default function adminList() {
         const fetchData = () => {
             fetch(`http://localhost:8080/api/kendaraan`, {
                 headers: {
-                    'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEyOTE3NjcsImV4cCI6MTcwMTI5ODk2NywidXNlcklkIjo4LCJzdGF0dXMiOiJhZG1pbiIsIm5hbWEiOiJIYWxvIiwiZW1haWwiOiJoYWlAZ21haWwuY29tIn0.ctNbn72-L9V9teV6SXHbVGUc4Lv5TPqkeo9BRmct8j8`,
+                    'Authorization': `Bearer ${token}`,
                 },
             })
                 .then(response => response.json())
@@ -37,7 +38,7 @@ export default function adminList() {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEyOTE3NjcsImV4cCI6MTcwMTI5ODk2NywidXNlcklkIjo4LCJzdGF0dXMiOiJhZG1pbiIsIm5hbWEiOiJIYWxvIiwiZW1haWwiOiJoYWlAZ21haWwuY29tIn0.ctNbn72-L9V9teV6SXHbVGUc4Lv5TPqkeo9BRmct8j8`,
+            'Authorization': `Bearer ${token}`,
           }
         })
         .then(response => {

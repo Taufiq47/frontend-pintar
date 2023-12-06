@@ -1,11 +1,13 @@
 "use client"
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 
 export default function adminAdd() {
     const [namaKendaraan, setNamaKendaraan] = useState('');
     const [tipeKendaraan, settipeKendaraan] = useState('');
     const [hargaSewa, sethargaSewa] = useState(0);
     const [jumlahKetersediaan, setjumlahKetersediaan] = useState(0);
+    const token = Cookies.get('token');
 
     const handleAddKendaraan = () => {
         if (!namaKendaraan || !tipeKendaraan || !hargaSewa || !jumlahKetersediaan) {
@@ -26,7 +28,7 @@ export default function adminAdd() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDEyOTU1MDYsImV4cCI6MTcwMTMwMjcwNiwidXNlcklkIjo4LCJzdGF0dXMiOiJhZG1pbiIsIm5hbWEiOiJIYWxvIiwiZW1haWwiOiJoYWlAZ21haWwuY29tIn0.rBSO5XmS9ycI1iiI8bbXnyz4CV7eXovWnvN3iEKoCCQ`,
+                'Authorization': `Bearer ${token}`,
             },
             mode: 'cors',
             body: JSON.stringify(
